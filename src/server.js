@@ -42,16 +42,16 @@ const types = {
 
 const HTMLtableBuilder = (data) => {
     const keys = Object.keys(data[0]);
-    let htmlString = '<table><tr>';
+    let htmlString = '<table style="border-collapse:collapse;border:1px solid black"><tr>';
     for (const key of keys) {
-        htmlString += `<th>${key}</th>`
+        htmlString += `<th style="border:1px solid black;text-align:center;padding:5px">${key}</th>`
     };
 
     htmlString += '</tr>'
     for (const record of data) {
         htmlString += '<tr>';
         for (const key of keys) {
-            htmlString += `<td>${record[key]}</td>`
+            htmlString += `<td style="border:1px solid black;text-align:center;padding:5px">${record[key]}</td>`
         };
         htmlString += '</tr>';
     };
